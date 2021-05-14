@@ -23,8 +23,8 @@ Or install it yourself as:
 ```ruby
 #Array Functions
 Rvec::Random_Array_Generation.new(2,2,value:-1).array #=> Creates 2D array by given size and value
-Rvec::Array_2D.new(a).rvarray2d) #=> 1D array to 2D
-Rvec::Array_1D.new(ele: a).rvarray1d) #=> 2D array to 1D
+Rvec::Array_2D.new(a).rvarray2d) #=> 1D array to 2D or create new 2D array
+Rvec::Array_1D.new(a).rvarray1d) #=> 2D array to 1D
 
 #Transpose Function
 Rvec::T.new([[0+1+1+0]]).t #=> 2
