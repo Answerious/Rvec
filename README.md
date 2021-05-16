@@ -1,6 +1,6 @@
 # Rvec
 
-Mathematical library for ruby
+Mathematical library for ruby (Not fully finished)
 
 ## Installation
 
