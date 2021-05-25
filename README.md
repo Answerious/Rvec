@@ -125,9 +125,9 @@ def train(training_set_inputs, training_set_outputs, number_of_training_iteratio
     number_of_training_iterations.times do
         output = think(training_set_inputs)
         error = apt(@output, output)
-        adjustment = dot(training_set_inputs.transposem mdt(error, sigd(output), 4))
+        adjustment = dot(training_set_inputs.transpose, mdt(error, sigd(output), 4))
         weights = @weights
-        @weights = adt(weights, adjusment, 4)
+        @weights = adt(weights, adjustment, 4)
     end
 end
 puts("Starting synaptic weights:")
