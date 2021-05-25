@@ -25,6 +25,8 @@ end
 ## NumPy:
 ```python
 synaptic_weights = rn.random((3, 1)) -1
+training_set_inputs = array([[0,1,0],[1,1,1],[1,0,1],[0,0,1]])
+training_set_outputs = array([[0+1+1+0]]).T
 
 def sigmoid(self, x):
     return 1/ (1 + exp(-x))
