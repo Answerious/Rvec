@@ -4,10 +4,11 @@ Mathematical library for ruby (Not fully finished)
 
 ## Installation
 
-download files and import rvec
-the gem install will come soon
-the information below if for when the gem
-becomes publically avaible
+DOWNLOAD FILES AND IMPORT RVEC
+THE GEM INSTALL WILL COME SOON
+THE INFORMATION BELOW IS FOR WHEN
+THE GEM BECOMES PUBLICALLY AVAILABLE
+
 ```ruby
 gem 'rvec'
 ```
