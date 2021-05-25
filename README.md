@@ -4,8 +4,10 @@ Mathematical library for ruby (Not fully finished)
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
+download files and import rvec
+the gem install will come soon
+the information below if for when the gem
+becomes publically avaible
 ```ruby
 gem 'rvec'
 ```
@@ -19,32 +21,91 @@ Or install it yourself as:
     $ gem install rvec
 
 ## Usage
-
+Creating random 2D array with custom size:
+the array is a 3,1 array with an starting value of 0->1 -1
 ```ruby
-#Array Functions
-Rvec::Random_Array_Generation.new(2,2,value:-1).array #=> Creates 2D array by given size and value
-Rvec::Array_2D.new(a).rvarray2d) #=> 1D array to 2D or create new 2D array
-Rvec::Array_1D.new(a).rvarray1d) #=> 2D array to 1D
-
-#Transpose Function
-Rvec::T.new([[0+1+1+0]]).t #=> 2
-Rvec::T.new([[0+1+1+1]]).t #=> 3
-Rvec::T.new([[0+0+1+0]]).t #=> 1
-
-#Exp Function
-Rvec::Exp.new(3).exp  #=> 20.085536923187668
-Rvec::Exp.new(7).exp  #=> 1096.6331584284585
-Rvec::Exp.new(72).exp #=> 1.858671745284e+31
-
-#Dot Function
-a = (Rvec::Array_2D.new([[0,1,0],[1,1,1],[1,0,1],[0,0,1]]).rvarray2d)
-b,c,d = [[1],[0],[1]], [[1],[1],[1]], [[0],[0],[0]]
-
-Rvec::Dot.new(a, b).mut #=> Matrix[[0],[2],[2],[1]]
-Rvec::Dot.new(a, c).mut #=> Matrix[[1],[3],[2],[1]]
-Rvec::Dot.new(a, d).mut #=> Matrix[[0],[0],[0],[0]]
+array(3,1,-1)
 ```
-
+Identifying Rvec and normal elements:
+note this works for Matrices, 3D-1D arrays, floats,
+strings, and integers
+```ruby
+id(3.00)
+```
+Array multiplication:
+please note the sizes have to work with each other
+or else there will be an error
+```ruby
+dot(array(3,1,-1),array(4,3,0))
+```
+Exponential function:
+note this works with 3D-1D arrays and matrices
+```ruby
+exp(array(3,1,-1))
+```
+Converting:
+coverts 2D to 1D and 1D to 2D
+```ruby
+covert([[2]])
+```
+Mutliply each element of a 2D array with corresponding element of another array:
+note the '4' at the end is for the shift value
+```ruby
+mdt(array(3,1,-1),(array(3,1,2),4)
+```
+Divide each element of a 2D array with corresponding element of another array:
+note the '4' at the end if for the shift value
+```ruby
+ddt(array(3,1,-1),array(3,1,2),4)
+```
+Add each element of a 2D array with corresponding element of another array:
+note the '4' at the end is for the shift value
+```ruby
+adt(array(3,1,-1),array(3,1,2),4)
+```
+Subtract each element of a 2D array with corresponding element of another array:
+note the '4' at the end is for the shift value
+```ruby
+sdt(array(3,1,-1),array(3,1,2),4)
+```
+Mutliply all elements in a 3D-1D array by '-1':
+```ruby
+nst(array(3,1,-1))
+```
+Mutliply all elements in a 3D-1D array by '1':
+```ruby
+pst(array(3,1,-1))
+```
+## Advanced Mathematics
+Sigmoid, Sigmoid_derivatives, Errornum are in the advanced mathematics area
+sig is the same as '1.0/(1.0+ exp(-x))'
+```ruby
+@inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
+@weights = [[-0.54944709],
+            [-0.26457845],
+            [-0.06770566]]
+sig(nst(dot(@inputs, @weights)))
+```
+sigd is the same as 'x * (1 -x)'
+```ruby
+@inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
+@weights = [[-0.54944709],
+            [-0.26457845],
+            [-0.06770566]]
+output = (sig(nst(dot(@inputs, @weights))))
+sigd(output)
+```
+errornum is apt
+```ruby
+@inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
+@output = ([[0+1+1+0]].transpose) and @output.each{|sublist| sublist.each{|item| @output = item} }
+@weights = [[-0.54944709],
+            [-0.26457845],
+            [-0.06770566]]
+                        
+output = sig(nst(dot(@inputs, @weights)))
+apt(@output, output)
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
