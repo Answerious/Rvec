@@ -1,10 +1,11 @@
-## Examples for Artifical Intelligence
+# Examples for Artifical Intelligence
 - The following is showing a benchmark single layer artifical intelligence algorithm
+- Each algorithm MUST complete 1000 training iterations
 
-## Rvec vs NumPy
+# Rvec vs NumPy
 Please not Rvec is [0.0.2] and two weeks old, whereas NumPy is over 20 years developed
 
-# Rvec
+## Rvec:
 ```ruby
 @inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
 @output = ([[0+1+1+0]].transpose) and @output.each{|sublist| sublist.each{|item| @output = item} }
@@ -20,7 +21,7 @@ def train(training_set_inputs, training_set_outputs, number_of_training_iteratio
     end
 end
 ```
-# NumPy
+## NumPy:
 ```python
 class NN():
     def __init__(self):
@@ -44,3 +45,7 @@ class NN():
         return self.__sigmoid(dot(inputs, self.synaptic_weights))
         
 ```
+## Overall
+Overall NumPy is more robust than Rvec as of now, NumPy is faster than Rvec, although Rvec is the fastest framework in ruby and the only one built fpr artifical intelligence development. 
+- The test cases in NumPy(Python) take 0.523 seconds to complete and run
+- The test cases in Rvec(Ruby) take 1.053 seconds to complete and run
