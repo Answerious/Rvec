@@ -21,6 +21,8 @@ Or install it yourself as:
     $ gem install rvec
 
 ## Usage
+lol
+## Rvec functions
 Creating random 2D array with custom size:
 the array is a 3,1 array with an starting value of 0->1 -1
 ```ruby
