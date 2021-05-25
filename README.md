@@ -107,6 +107,35 @@ errornum is apt
 output = sig(nst(dot(@inputs, @weights)))
 apt(@output, output)
 ```
+
+## Artifical Intelligence
+Note: The rvec framework is being compared to the 'NumPy' framework
+
+The following example is a super easy and simple training algorithm written in rvec
+```ruby
+@inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
+@output = ([[0+1+1+0]].transpose) and @output.each{|sublist| sublist.each{|item| @output = item} }
+@weights = array(3,1,-1)
+
+def think(inputs)
+    return (sig(nst(dot(inputs, @weights))))
+end
+
+def train(training_set_inputs, training_set_outputs, number_of_training_iterations)
+    number_of_training_iterations.times do
+        output = think(training_set_inputs)
+        error = apt(@output, output)
+        adjustment = dot(training_set_inputs.transposem mdt(error, sigd(output), 4))
+        weights = @weights
+        @weights = adt(weights, adjusment, 4)
+    end
+end
+puts("Starting synaptic weights:")
+puts(print(@weights))
+puts("Trained synaptic weights:")
+train(@inputs, @output, 1000)
+puts(print(@weights))
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
