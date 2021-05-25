@@ -78,6 +78,7 @@ pst(array(3,1,-1))
 ```
 ## Advanced Mathematics
 Sigmoid, Sigmoid_derivatives, Errornum are in the advanced mathematics area
+
 sig is the same as '1.0/(1.0+ exp(-x))'
 ```ruby
 @inputs = [[0,1,0],[1,1,1],[1,0,1],[0,0,1]]
