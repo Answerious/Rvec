@@ -47,5 +47,5 @@ class NN():
 ```
 ## Overall
 Overall NumPy is more robust than Rvec as of now, NumPy is faster than Rvec, although Rvec is the fastest framework in ruby and the only one built for artifical intelligence development. 
-- The test cases in NumPy(Python) take 0.523 seconds to complete and run
-- The test cases in Rvec(Ruby) take 1.053 seconds to complete and run
+- The test cases in NumPy(Python) take 0.567 seconds to complete and run
+- The test cases in Rvec(Ruby) take 1.023 seconds to complete and run
