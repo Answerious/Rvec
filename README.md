@@ -47,9 +47,9 @@ note this works with 3D-1D arrays and matrices
 exp(array(3,1,-1))
 ```
 Converting:
-coverts 2D to 1D and 1D to 2D
+converts 2D to 1D and 1D to 2D
 ```ruby
-covert([[2]])
+convert([[2]])
 ```
 Mutliply each element of a 2D array with corresponding element of another array:
 note the '4' at the end is for the shift value
