@@ -28,20 +28,20 @@ synaptic_weights = rn.random((3, 1)) -1
 training_set_inputs = array([[0,1,0],[1,1,1],[1,0,1],[0,0,1]])
 training_set_outputs = array([[0+1+1+0]]).T
 
-def sigmoid(self, x):
+def sigmoid(x):
     return 1/ (1 + exp(-x))
 
-def sigmoid_derivative(self, x):
+def sigmoid_derivative(x):
     return x * (1 -x)
 
-def train(self, training_set_inputs, training_set_outputs, number_of_training_iterations):
+def train(training_set_inputs, training_set_outputs, number_of_training_iterations):
     for iteration in range(number_of_training_iterations):
         output = think(training_set_inputs)
         error = training_set_outputs - output
         adjustment = dot(training_set_inputs.T, error * sigmoid_derivative(output))
         synaptic_weights += adjustment
        
-def think(self, inputs):
+def think(inputs):
     return sigmoid(dot(inputs, synaptic_weights))
         
 ```
