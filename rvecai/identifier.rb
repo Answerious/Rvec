@@ -16,7 +16,7 @@ def matrix?(x)
     if x.any? { |e| e.is_a?(Array) }
         d = x.group_by { |e| e.is_a?(Array) && matrix?(e) }.keys
         [x.size] + d.first if d.size == 1 && d.first
-        return "Matrix"
+        return true
     else
         #[x.size]
         false
@@ -26,50 +26,52 @@ end
 
 def threeDimension?(x)
     @a = (([*x]).to_s) and @b = @a.split("")
-    return "3D" if (@b.first(3)) == ["[","[","["]
+    return true if (@b.first(3)) == ["[","[","["]
     false
 end
 
 def twoDimension?(x)
     @a = (([*x]).to_s) and @b = @a.split("")
-    return "2D" if (@b.first(2)) == ["[","["] and (@b.first(3)) != ["[","[","["]
+    return true if (@b.first(2)) == ["[","["] and (@b.first(3)) != ["[","[","["]
     false
 end
 
 def oneDimension?(x)
     @a = ((x).to_s) and @b = @a.split("")
-    return "1D" if (@b.first(2)) != ["[","["] and (@b.first(1)) == ["["]
+    return true if (@b.first(2)) != ["[","["] and (@b.first(1)) == ["["]
     false
 end
 
 def float?(x)
-    return "Float" if (x.is_a? Float)
+    return true if (x.is_a? Float)
     false
 end
 
 def integer?(x)
-    return "Integer" if (x.is_a? Numeric) and (x.is_a? Float) == false
+    return true if (x.is_a? Numeric) and (x.is_a? Float) == false
     false
 end
 
 def string?(x)
     if (x.is_a? Float) == true || (x.is_a? Numeric) ; return false end
-    if x.match?(/^[0-9]\d*(\.\d+)?$/) || x.match?(/[A-Z]/i) == true ; return "String" end
+    if x.match?(/^[0-9]\d*(\.\d+)?$/) || x.match?(/[A-Z]/i) == true ; return true end
     false
 end
 
 def id(x)
     @x = x
-    if threeDimension?(@x) != false ; return "3D" 
-    elsif twoDimension?(@x) != false ; return "2D"
-    elsif oneDimension?(@x) != false ; return "1D"
-    elsif float?(@x) != false ; return "Float"
-    elsif integer?(@x) != false ; return "Integer"
-    elsif string?(@x) != false ; return "String"
-    elsif matrix?(@x) != false ; return "Matrix"
-    else
-        return ("Magically item you got there no matches!")
+    return case
+    when threeDimension?(@x) == true ; "3D"
+    when twoDimension?(@x) == true ; "2D"
+    when oneDimension?(@x) == true ; "1D"
+    when float?(@x) == true ; "Float"
+    when integer?(@x) == true ; "Integer"
+    when string?(@x) == true ; "String"
+    when matrix?(@x) == true ; "Matrix"
+    else ; "Magical item you got there no matches!"
+
     end
+
 end
 
 describe 'Rvec : Identifier :' do
@@ -82,9 +84,9 @@ describe 'Rvec : Identifier :' do
         test2 = matrix?([3])
         test3 = matrix?([[3],[2]])
 
-        expect(test1).to eq("Matrix")
+        expect(test1).to eq(true)
         expect(test2).to eq(false)
-        expect(test3).to eq("Matrix")
+        expect(test3).to eq(true)
 
     end
 
@@ -94,7 +96,7 @@ describe 'Rvec : Identifier :' do
         test2 = threeDimension?([[3],[2]])
         test3 = threeDimension?([3])
 
-        expect(test1).to eq("3D")
+        expect(test1).to eq(true)
         expect(test2).to eq(false)
         expect(test3).to eq(false)
 
@@ -107,7 +109,7 @@ describe 'Rvec : Identifier :' do
         test3 = twoDimension?([3])
 
         expect(test1).to eq(false)
-        expect(test2).to eq("2D")
+        expect(test2).to eq(true)
         expect(test3).to eq(false)
 
     end
@@ -120,7 +122,7 @@ describe 'Rvec : Identifier :' do
 
         expect(test1).to eq(false)
         expect(test2).to eq(false)
-        expect(test3).to eq("1D")
+        expect(test3).to eq(true)
 
     end
 
@@ -130,7 +132,7 @@ describe 'Rvec : Identifier :' do
         test2 = float?(3)
         test3 = float?("3")
 
-        expect(test1).to eq("Float")
+        expect(test1).to eq(true)
         expect(test2).to eq(false)
         expect(test3).to eq(false)
 
@@ -143,7 +145,7 @@ describe 'Rvec : Identifier :' do
         test3 = integer?("3")
 
         expect(test1).to eq(false)
-        expect(test2).to eq("Integer")
+        expect(test2).to eq(true)
         expect(test3).to eq(false)
 
     end
@@ -156,7 +158,7 @@ describe 'Rvec : Identifier :' do
 
         expect(test1).to eq(false)
         expect(test2).to eq(false)
-        expect(test3).to eq("String")
+        expect(test3).to eq(true)
 
     end
 
