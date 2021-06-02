@@ -1,5 +1,7 @@
 # Rvec
 
+# <img alt="rvec" src="rvec.PNG" height="50">
+
 Mathematical library for ruby (Not fully finished)
 
 ## Installation
