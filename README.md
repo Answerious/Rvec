@@ -37,6 +37,24 @@ strings, and integers
 ```ruby
 id(3.00)
 ```
+Length:
+Get the length of a string, integer, array..
+```ruby
+len("abc")
+```
+Reverse:
+Reverse order a array
+```ruby
+reverse([1,3,2,4]
+```
+Creating [] or list:
+```ruby 
+list()
+```
+Creating {} or dictionary:
+```ruby
+set()
+```
 Array multiplication:
 please note the sizes have to work with each other
 or else there will be an error
