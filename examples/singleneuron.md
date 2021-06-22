@@ -1,7 +1,7 @@
 # Examples for Artifical Intelligence
 - The following is showing a benchmark single layer artifical intelligence algorithm
 - Each algorithm MUST complete 1000 training iterations
-# <img alt="network" src="Rvec/sln.png" height="110">
+# <img alt="network" src="rvec/sln.png" height="110">
 
 # Rvec vs NumPy
 Please not Rvec is [0.0.2] and two weeks old, whereas NumPy is over 20 years developed
