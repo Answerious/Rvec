@@ -45,7 +45,7 @@ len("abc")
 Reverse:
 Reverse order a array
 ```ruby
-reverse([1,3,2,4]
+reverse([1,3,2,4])
 ```
 Creating [] or list:
 ```ruby 
