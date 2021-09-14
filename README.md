@@ -66,10 +66,10 @@ note this works with 3D-1D arrays and matrices
 ```ruby
 exp(array(3,1,-1))
 ```
-Converting:
-converts 2D to 1D and 1D to 2D
+Flattening:
+ravel 2D to 1D
 ```ruby
-convert([[2]])
+ravel([[1],[2],[3],[4]])
 ```
 Mutliply each element of a 2D array with corresponding element of another array:
 note the '4' at the end is for the shift value
@@ -98,6 +98,42 @@ nst(array(3,1,-1))
 Mutliply all elements in a 3D-1D array by '1':
 ```ruby
 pst(array(3,1,-1))
+```
+Mean Squared Number:
+Calculate the mean squared number (mse) given a 1D array
+```ruby
+mse([1,2,3,4])
+```
+Sums of Arrays:
+Calculate the sum of a array, 1D, 2D, or 3D
+```ruby
+sum([1,2,3,4])
+```
+Standard Deviation:
+Calculate the std of a 1D array
+```ruby
+std([1,2,3,4])
+```
+Sum of Squares:
+Denote this is the same as mse
+```ruby
+ss([1,2,3,4])
+```
+Sum of Products:
+Caluclate the sum of products given two same sized 1D arrays
+```ruby
+sp([1,2,3,4],[4,3,2,1])
+```
+## Linear Regression
+Regression function:
+Find the linear regression given two x and y sets(same size)
+```ruby
+regx([1,2,3,4],[1,4,9,16])
+```
+Predict function:
+Find the prediction of a linear regression model
+```ruby
+predict(1, regx([1,2,3,4],[1,4,9,16]))
 ```
 ## Advanced Mathematics
 Sigmoid, Sigmoid_derivatives, Errornum are in the advanced mathematics area
@@ -130,7 +166,44 @@ errornum is apt
 output = sig(nst(dot(@inputs, @weights)))
 apt(@output, output)
 ```
+## Experimental Functions
+The following below is for the python graphing stuff
 
+Background graphing colour:
+```python
+set_bgcolor(str) 
+"""i.e set_bgcolor("blue")"""
+```
+Function & Axis Colour:
+```python
+set_color(str)
+"""i.e set_color("black")"""
+```
+Changing x Axis Size:
+```python
+set_x(int)
+"""i.e set_x(20)"""
+```
+Changing y Axis Size:
+```python
+set_y(int)
+"""i.e set_y(18)"""
+```
+Graphing a function:
+```python
+set_func(str)
+"""i.e set_func("1*(x)+1")"""
+```
+Setting Graphing Mode:
+Can only be 0,1,2,3 or 4
+```python
+set_mode(int)
+"""i.e set_mode(0) <-- this is the best one"""
+```
+Showing the Graph:
+```python
+graph()
+```
 ## Artifical Intelligence
 Note: The rvec framework is being compared to the 'NumPy' framework
 
