@@ -251,18 +251,3 @@ def set_mode(x) -> int:
 def graph():
     while True:
         Window().draw_plot()
-
-
-set_mode(0)
-set_x(10)
-set_y(10)
-set_bgcolor("dark violet")
-set_color("black")
-#setfunc("((1/2)*((1/2)*x-2)**3)+3")
-#setfunc("((1/2)*x)+2")
-#setfunc("((((1/2)*(((3)*(x))**4))+(((2)*(x))**3)+(x))**3)+2")
-#setfunc("(1*(x**2))+(2*x)")
-#setfunc("(math.tan((x)))/math.cos((x))")
-#setfunc("6*(x)+(-7)")
-#setfunc(3)
-graph()
