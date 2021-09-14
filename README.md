@@ -99,6 +99,10 @@ Mutliply all elements in a 3D-1D array by '1':
 ```ruby
 pst(array(3,1,-1))
 ```
+Find a list mean:
+```ruby
+mean([1,2,3,4])
+```
 Mean Squared Number:
 Calculate the mean squared number (mse) given a 1D array
 ```ruby
