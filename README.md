@@ -99,7 +99,7 @@ Mutliply all elements in a 3D-1D array by '1':
 ```ruby
 pst(array(3,1,-1))
 ```
-Find a list mean:
+Find a mean given a list:
 ```ruby
 mean([1,2,3,4])
 ```
