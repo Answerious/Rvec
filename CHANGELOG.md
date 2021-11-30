@@ -12,3 +12,6 @@ Used to create feed forward backwards propogate neural network
 ## [0.0.3] - 2021-09-14
 - Fourth release:
 Added graphing(experimental), more mathematical functions, helping commands
+## [0.0.4] - 2021-11-30
+- Fifth release:
+Added polynomial regression 1-3 degrees, and redefined use cases Rvec.(function)
