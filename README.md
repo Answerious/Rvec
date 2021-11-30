@@ -29,116 +29,129 @@ lol
 Creating random 2D array with custom size:
 the array is a 3,1 array with an starting value of 0->1 -1
 ```ruby
-array(3,1,-1)
+Rvec.array(3,1,-1)
 ```
 Identifying Rvec and normal elements:
 note this works for Matrices, 3D-1D arrays, floats,
 strings, and integers
 ```ruby
-id(3.00)
+Rvec.id(3.00)
 ```
 Length:
 Get the length of a string, integer, array..
 ```ruby
-len("abc")
+Rvec.len("abc")
 ```
 Reverse:
 Reverse order a array
 ```ruby
-reverse([1,3,2,4])
+Rvec.reverse([1,3,2,4])
 ```
 Creating [] or list:
 ```ruby 
-list()
+Rvec.list()
 ```
 Creating {} or dictionary:
 ```ruby
-set()
+Rvec.set()
 ```
 Array multiplication:
 please note the sizes have to work with each other
 or else there will be an error
 ```ruby
-dot(array(3,1,-1),array(4,3,0))
+Rvec.dot(Rvec.array(3,1,-1),Rvec.array(4,3,0))
 ```
 Exponential function:
 note this works with 3D-1D arrays and matrices
 ```ruby
-exp(array(3,1,-1))
+Rvec.exp(array(3,1,-1))
 ```
 Flattening:
 ravel 2D to 1D
 ```ruby
-ravel([[1],[2],[3],[4]])
+Rvec.ravel([[1],[2],[3],[4]])
 ```
 Mutliply each element of a 2D array with corresponding element of another array:
 note the '4' at the end is for the shift value
 ```ruby
-mdt(array(3,1,-1),(array(3,1,2),4)
+Rvec.mdt(Rvec.array(3,1,-1),(Rvec.array(3,1,2),4)
 ```
 Divide each element of a 2D array with corresponding element of another array:
 note the '4' at the end if for the shift value
 ```ruby
-ddt(array(3,1,-1),array(3,1,2),4)
+Rvec.ddt(Rvec.array(3,1,-1),Rvec.array(3,1,2),4)
 ```
 Add each element of a 2D array with corresponding element of another array:
 note the '4' at the end is for the shift value
 ```ruby
-adt(array(3,1,-1),array(3,1,2),4)
+Rvec.adt(Rvec.array(3,1,-1),Rvec.array(3,1,2),4)
 ```
 Subtract each element of a 2D array with corresponding element of another array:
 note the '4' at the end is for the shift value
 ```ruby
-sdt(array(3,1,-1),array(3,1,2),4)
+Rvec.sdt(Rvec.array(3,1,-1),Rvec.array(3,1,2),4)
 ```
 Mutliply all elements in a 3D-1D array by '-1':
 ```ruby
-nst(array(3,1,-1))
+Rvec.nst(Rvec.array(3,1,-1))
 ```
 Mutliply all elements in a 3D-1D array by '1':
 ```ruby
-pst(array(3,1,-1))
+Rvec.pst(Rvec.array(3,1,-1))
 ```
 Find a mean given a list:
 ```ruby
-mean([1,2,3,4])
+Rvec.mean([1,2,3,4])
 ```
 Mean Squared Number:
 Calculate the mean squared number (mse) given a 1D array
 ```ruby
-mse([1,2,3,4])
+Rvec.mse([1,2,3,4])
 ```
 Sums of Arrays:
 Calculate the sum of a array, 1D, 2D, or 3D
 ```ruby
-sum([1,2,3,4])
+Rvec.sum([1,2,3,4])
 ```
 Standard Deviation:
 Calculate the std of a 1D array
 ```ruby
-std([1,2,3,4])
+Rvec.std([1,2,3,4])
 ```
 Sum of Squares:
 Denote this is the same as mse
 ```ruby
-ss([1,2,3,4])
+Rvec.ss([1,2,3,4])
 ```
 Sum of Products:
 Caluclate the sum of products given two same sized 1D arrays
 ```ruby
-sp([1,2,3,4],[4,3,2,1])
+Rvec.sp([1,2,3,4],[4,3,2,1])
 ```
 ## Linear Regression
 Regression function:
 Find the linear regression given two x and y sets(same size)
 ```ruby
-regx([1,2,3,4],[1,4,9,16])
+Rvec.regx([1,2,3,4],[1,4,9,16])
 ```
 Predict function:
 Find the prediction of a linear regression model
 ```ruby
-predict(1, regx([1,2,3,4],[1,4,9,16]))
+Rvec.predict(1, Rvec.regx([1,2,3,4],[1,4,9,16]))
 ```
+
+## Polynomial Regression
+Polynomial function:
+Find & predict input
+```ruby
+x = [0,1.5,2,3,4,5,6]
+y = [0,1.5,2.5,4,4,4.5,5]
+degree = 2
+/ finding the expected result for an input of 0 /
+regx = (Rvec.PolynomialRegression(x,y,degree,type=2))
+puts(print(Rvec.predict(0,regx))
+```
+
 ## Advanced Mathematics
 Sigmoid, Sigmoid_derivatives, Errornum are in the advanced mathematics area
 
@@ -148,7 +161,7 @@ sig is the same as '1.0/(1.0+ exp(-x))'
 @weights = [[-0.54944709],
             [-0.26457845],
             [-0.06770566]]
-sig(nst(dot(@inputs, @weights)))
+Rvec.sig(Rvec.nst(Rvec.dot(@inputs, @weights)))
 ```
 sigd is the same as 'x * (1 -x)'
 ```ruby
@@ -156,8 +169,8 @@ sigd is the same as 'x * (1 -x)'
 @weights = [[-0.54944709],
             [-0.26457845],
             [-0.06770566]]
-output = (sig(nst(dot(@inputs, @weights))))
-sigd(output)
+output = (Rvec.sig(Rvec.nst(Rvec.dot(@inputs, @weights))))
+Rvec.sigd(output)
 ```
 errornum is apt
 ```ruby
@@ -167,8 +180,8 @@ errornum is apt
             [-0.26457845],
             [-0.06770566]]
                         
-output = sig(nst(dot(@inputs, @weights)))
-apt(@output, output)
+output = Rvec.sig(Rvec.nst(Rvec.dot(@inputs, @weights)))
+Rvec.apt(@output, output)
 ```
 ## Experimental Functions
 The following below is for the python graphing stuff
