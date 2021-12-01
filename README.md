@@ -12,6 +12,9 @@ THE INFORMATION BELOW IS FOR WHEN
 THE GEM BECOMES PUBLICALLY AVAILABLE
 
 ```ruby
+"""
+note no active gem install
+"""
 gem 'rvec'
 ```
 
