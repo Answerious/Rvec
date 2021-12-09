@@ -1,6 +1,6 @@
 require_relative 'matrixcreation'
 require_relative 'matrixmulti'
-require_relative 'matrixinverse2-4'
+require_relative 'matrixinverse2-6'
 #require_relative '../../rvecclasshandler'
 
 #1 = "intinput"
