@@ -1941,9 +1941,8 @@ def func_inverse(given_arr)
         return func_inverse4x4(given_arr)
     elsif type == [5, 5]
         return func_inverse5x5(given_arr)
-    elsif type == [6, 6]
-          return func_inverse6x6(given_arr)
     else
-        return ("Unsupported size")
+        require_relative 'nxninversion'
+        return func_inverse_nxn(given_arr)
     end
 end
