@@ -19,3 +19,5 @@ Added polynomial regression 1-3 degrees, and redefined use cases Rvec.(function)
 Added polynomial regression from 1-4 degrees. + 1 degree
 - Fifth release second patch:
 Added polynomial regression from 1-5 degrees. + 1 degree
+- Fifth release third patch:
+Added polynomial regression from 1-n degrees. + n degree
