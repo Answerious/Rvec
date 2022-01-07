@@ -20,4 +20,4 @@ Added polynomial regression from 1-4 degrees. + 1 degree
 - Fifth release second patch:
 Added polynomial regression from 1-5 degrees. + 1 degree
 - Fifth release third patch:
-Added polynomial regression from 1-n degrees. + n degree
+Added polynomial regression from 1-n degrees. + n degree (2022-01-06)
