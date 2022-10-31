@@ -154,7 +154,7 @@ puts(print(Rvec.predict(0,regx))
 ```
 
 ## Logistic Regression
-Find an predict who passes a test based on study hours:
+Predict who passes a test based on study hours:
 ```ruby
 require_relative 'rvec'
 
