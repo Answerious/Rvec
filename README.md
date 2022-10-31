@@ -153,6 +153,31 @@ regx = (Rvec.PolynomialRegression(x,y,degree,type=2))
 puts(print(Rvec.predict(0,regx))
 ```
 
+## Logistic Regression
+Find an predict who passes a test based on study hours:
+```ruby
+require_relative 'rvec'
+
+# Baseline from previous examination
+hours_Studied = [1.0, 7.9, 3.1, 6.2, 4.2]
+passed_Exam = [0, 1, 0, 1, 0] # --> Where '1' is a pass & '0' is not
+
+# Creating the model from our previous data
+model = Rvec.logistic(hours_Studied, passed_Exam)
+
+# New Data for hours studied
+hours_Studient_Recent = [3.0, 3.1, 4.2, 7.9, 5.5, 4.3, 6.2, 7.3, 1.0, 5.6]
+
+# This is our predictions since 5.5 and above is a pass generally.
+passed_Exam_Recent = [0, 0, 0, 1, 1, 0, 1, 1, 0, 1]
+
+# Predicting our new data
+predicting_model = Rvec.predictlog(model, hours_Studient_Recent, passed_Exam_Recent)
+
+# Printing our confusion matrix stats:
+puts(print(predicting_model))
+```
+
 ## Advanced Mathematics
 Sigmoid, Sigmoid_derivatives, Errornum are in the advanced mathematics area
 
