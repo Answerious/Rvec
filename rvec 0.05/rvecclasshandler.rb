@@ -169,9 +169,13 @@ end
 module LogisticRegression
     require_relative "./arrayspec/logistic/logistic_regression"
     require_relative "./arrayspec/logistic/logistic_prediction"
+    #require_relative "./arrayspec/logistic/gradient_method"
+    #require_relative "./arrayspec/logistic/newton_method"
+    #require_relative "./arrayspec/logistic/data_organisation"
+    #require_relative "./arrayspec/logistic/logistic_initialisation"
 
     def f_logistic(train_x, train_y, method="n", type="binary")
-        return func_logistic(train_x, train_y, method, binary)
+        return func_logistic(train_x, train_y, method, type)
     end
 
     def f_predictlog(model, test_x, test_y, show=true)
@@ -347,14 +351,14 @@ class Rvec
     def self.logistic(train_x, train_y, method="n", type="binary")
         """Logistic Regression"""
         set = self.extend(LogisticRegression)
-        return self.f_logistic(train_x, train_x, method, type)
+        return self.f_logistic(train_x, train_y, method, type)
     end
 
     def self.predictlog(model, test_x, test_y, show=true)
         """Logistic Regression Prediction"""
         set = self.extend(LogisticRegression)
-        return self.f_predictlog(model, train_x, train_y, show)
+        return self.f_predictlog(model, test_x, test_y, show)
     end
 end
 
-puts print "Test"
+#puts print "Test"
