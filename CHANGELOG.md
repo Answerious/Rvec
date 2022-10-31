@@ -24,3 +24,5 @@ Added polynomial regression from 1-n degrees. + n degree (2022-01-06)
 ## [0.0.5] - 2022-10-29
 - Sixth release:
 Added binary logistic regression
+- Sixth release patch:
+Fixed the 'classhandler' to not confuse x, and y for logistic regression.
